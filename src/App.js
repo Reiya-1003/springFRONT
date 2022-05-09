@@ -64,7 +64,7 @@ const App = ()=>{
   return (
     <div>
     <nav className="navbar navbar-expand navbar-dark bg-black">
-      <Link to={"/"} className="navbar-brand">
+      <Link to={"/home"} className="navbar-brand">
         Youtube on Chat
       </Link>
       <div className="navbar-nav mr-auto">
