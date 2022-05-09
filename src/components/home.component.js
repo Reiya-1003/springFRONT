@@ -24,7 +24,7 @@ const Home =()=>{
     
     setSearchword(e.target.value);
     setParams({
-    key: API_KEY,
+    key: process.env.API_KEY,
     q: `${e.target.value}`, // 検索キーワード
     type: "video", // video,channel,playlistから選択できる
     maxResults: "10", // 結果の最大数 50が限界ぽい
@@ -36,11 +36,7 @@ const Home =()=>{
     
   }
 
-  const clickKakunin=()=>{
-    console.log(searchword)
-    
-    console.log(params)
-  }
+
 
 
   const serchVideo = ()=>{
@@ -51,7 +47,7 @@ const Home =()=>{
 　　
 
       // APIをコールする
-     fetch(YOUTUBE_SERACH_API_URI + queryParams)
+     fetch(process.env.YOUTUBE_SERACH_API_URI + queryParams)
      .then((res) => res.json())
      .then(
        (result) => {

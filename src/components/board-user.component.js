@@ -8,7 +8,7 @@ import EventBus from "../common/EventBus";
 
 
 const YOUTUBE_PLAYLIST ="https://www.youtube.com/playlist?list=";
-const API_KEY = "AIzaSyDr92tx4aLOH-JhFlXIeVpag8ueO7oVOi0";
+// const API_KEY = "AIzaSyDr92tx4aLOH-JhFlXIeVpag8ueO7oVOi0";
 
 const BoardUser=()=>{
     const [content,setContent]=useState("")
@@ -63,7 +63,7 @@ const BoardUser=()=>{
         console.log("effectのif")
           axios
           .get(
-        `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${user.youtubeid}&maxResults=50&key=${API_KEY}`
+        `https://www.googleapis.com/youtube/v3/playlists?part=snippet&channelId=${user.youtubeid}&maxResults=50&key=${process.env.API_KEY}`
           )
           .then((res) => {
             
